@@ -1,8 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
+int fact(int n){
+    if(n==1){
+        return 1;
+    }
+    int multi = fact(n-1);
+    return n*multi;
+}
 
+int main() {
+    cout << fact(5);
     
     return 0;
 }
