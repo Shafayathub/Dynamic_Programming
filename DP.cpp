@@ -1,18 +1,27 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int fibo(int n)
+long long int dp[1005];
+
+int fibo(long long int n)
 {
     if (n == 0 || n == 1)
     {
         return n;
     }
-    return fibo(n - 1) + fibo(n - 2);
+    if(dp[n]!=-1){
+        return dp[n];
+    }
+    dp[n] = fibo(n - 1) + fibo(n - 2);
+    return dp[n];
 }
 
 int main()
 {
-    cout << fibo(8);
+    memset(dp, -1, sizeof(dp));
+    int n;
+    cin >> n;
+    cout << fibo(n);
 
     return 0;
 }
